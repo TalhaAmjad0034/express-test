@@ -1,0 +1,306 @@
+// Usefull Link for turning Code into nicely formatted Snippets https://snippet-generator.app/
+{
+  "A new next page with some basic scaffolding for the project": {
+    "prefix": "np",
+    "body": [
+      "import {} from '@mui/material';",
+      "import Image from 'components/Image';",
+      "import UserSessionProvider from 'components/UserSessionProvider';",
+      "import { NextPage } from 'next';",
+      "import React from 'react';",
+      "",
+      "const ${TM_FILENAME_BASE:Name}: NextPage = () => {",
+      "  return (",
+      "    <UserSessionProvider",
+      "      allowUnauthenticated",
+      "      allowedRoles={[]}$0",
+      "    ></UserSessionProvider>",
+      "  );",
+      "};",
+      "",
+      "export default ${TM_FILENAME_BASE:Name};",
+      ""
+    ],
+    "description": "A new next page with some basic scaffolding for the project"
+  },
+  "ProjectReact Functional": {
+    "scope": "typescriptreact",
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react'",
+      "",
+      "interface ${TM_FILENAME_BASE:Name}Props {",
+      "  exampleProp: string",
+      "}",
+      "",
+      "export const ${TM_FILENAME_BASE:Name}: React.FunctionComponent<${TM_FILENAME_BASE:Name}Props> = ({",
+      "  exampleProp,",
+      "}) => {",
+      "",
+      "  $0",
+      "",
+      "  return (",
+      "    <React.Fragment>",
+      "      <div></div>",
+      "    </React.Fragment>",
+      "  )",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE:Name}"
+    ],
+    "description": "A react functional component in the correct format for general use in this project!"
+  },
+
+  "ProjectReact Functional Index File": {
+    "scope": "typescriptreact",
+    "prefix": "rfci",
+    "body": [
+      "import React from 'react'",
+      "",
+      "interface ${TM_DIRECTORY/.*\\/(.*)$/$1/g}Props {",
+      "  exampleProp: string",
+      "}",
+      "",
+      "export const ${TM_DIRECTORY/.*\\/(.*)$/$1/g}: React.FunctionComponent<${TM_DIRECTORY/.*\\/(.*)$/$1/g}Props> = ({",
+      "  exampleProp,",
+      "}) => {",
+      "",
+      "  $0",
+      "",
+      "  return (",
+      "    <React.Fragment>",
+      "      <div></div>",
+      "    </React.Fragment>",
+      "  )",
+      "}",
+      "",
+      "export default ${TM_DIRECTORY/.*\\/(.*)$/$1/g}"
+    ],
+    "description": "A react functional component in the correct format for general use in this project when using form an index.js file!"
+  },
+
+  // Recoil Snippets
+  "recoiljs atom": {
+    "scope": "typescript",
+    "prefix": "rclatom",
+    "body": [
+      "export const ${1:myNewAtom} = atom({",
+      "  key: '${1:myNewAtom}',",
+      "  default: ${2:value},",
+      "})$0"
+    ],
+    "description": "atom"
+  },
+
+  "recoiljs selector": {
+    "scope": "typescript",
+    "prefix": "rclselector",
+    "body": [
+      "export const ${1:myNewSelector} = selector({",
+      "  key: '${1:myNewSelector}',",
+      "  get: ({get}) => get(${2:myAtom}),",
+      "  set: ({set}, newValue) => set(${2:myAtom}, newValue),",
+      "})$0"
+    ],
+    "description": "selector"
+  },
+
+  "recoiljs state": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "rclstate",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useRecoilState(${2:myAtomOrSelector})$0"
+    ],
+    "description": "state"
+  },
+  "recoiljs value": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "rclvalue",
+    "body": [
+      "const ${1:myRecoilValue} = useRecoilValue(${2:myAtomOrSelector})$0"
+    ],
+    "description": "value"
+  },
+
+  "recoiljs set value": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "rclsetvalue",
+    "body": [
+      "const ${1:setMyRecoilValue} = useSetRecoilState(${2:myAtomOrSelector})$0"
+    ],
+    "description": "set value"
+  },
+
+  "recoiljs reset value": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "rclresetvalue",
+    "body": [
+      "const ${1:resetMyRecoilValue} = useResetRecoilState(${2:myAtomOrSelector})$0"
+    ],
+    "description": "reset value"
+  },
+
+  "recoiljs is value": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "rclisvalue",
+    "body": ["isRecoilValue(${1:myAtomOrSelector})$0"],
+    "description": "is value"
+  },
+
+  "recoiljs import": {
+    "scope": "typescript,typescriptreact",
+    "prefix": "rclimport",
+    "body": ["import { ${1:} } from 'recoil'$0"],
+    "description": "recoiljs import"
+  },
+
+  // React Query Snippets
+  // TODO: Update to reflect our way with our URL's, types and Axios.
+  // "react-query query function and customhook": {
+  //   "prefix": "rqqueryfuncandhook",
+  //   "body": [
+  //     "const get${1:QueryName} = async (): Promise<",
+  //     "  ${2:${1}Return}",
+  //     "> => {",
+  //     "  const apiURL = `${process.env.NEXT_PUBLIC_API}/${1}`",
+  //     "  return fetch(`\\${apiURL}`).then((res) => res.json())",
+  //     "}",
+  //     "",
+  //     "export const use${1} = (): UseQueryResult<",
+  //     "  ${2},",
+  //     "  Error",
+  //     "> => {",
+  //     "  return useQuery('${1}', get${1})",
+  //     "}"
+  //   ],
+  //   "description": "react-query query function and customhook"
+  // }
+
+  "The skeleton of a React Query Custom Hook": {
+    "prefix": "rqch",
+    "body": [
+      "import axios from 'axios';",
+      "import { useQuery } from 'react-query';",
+      "",
+      "export interface ${1:${TM_FILENAME_BASE/^use//}} {",
+      "  /**",
+      "   * This should be the structure of returned data from the API.",
+      "   */",
+      "  data: any;",
+      "}",
+      "",
+      "export const get${1} = async () => {",
+      "  const { data: ${1/(.)/${1:/downcase}/} } = await axios.get<${1}>(",
+      "    `${process.env.NEXT_PUBLIC_STARTOTYPE_API_BASE_URL}?fido=${2:<FidoNumber>}`",
+      "  );",
+      "  return ${1/(.)/${1:/downcase}/};",
+      "};",
+      "",
+      "// Export this so we can use when implementing and ensure consistency",
+      "export const ${1/(.)/${1:/downcase}/}QueryKey = '${1/(.)/${1:/downcase}/}';",
+      "",
+      "export function use${1}() {",
+      "  return useQuery([${1/(.)/${1:/downcase}/}QueryKey], get${1}, {});",
+      "}",
+      ""
+    ],
+    "description": "The skeleton of a React Query Custom Hook"
+  },
+
+  // RHF Snippets
+
+  "Imports and a starter Schema for RHF and Zod": {
+    "prefix": "rhfimportsandschema",
+    "body": [
+      "import { z } from 'zod';",
+      "import { zodResolver } from '@hookform/resolvers/zod';",
+      "import { SubmitHandler, useForm } from 'react-hook-form';",
+      "import { RHFTextField } from 'components/RHFTextField';",
+      "",
+      "const formSchema = z.object({",
+      "  name: z.string()",
+      "})",
+      "",
+      "type FormSchema = z.infer<typeof formSchema>"
+    ],
+    "description": "Imports and a starter Schema for RHF and Zod"
+  },
+
+  "RHF UseForm and Submit Function": {
+    "prefix": "rhfuseformandsubmit",
+    "body": [
+      "  const {",
+      "    handleSubmit,",
+      "    control,",
+      "    formState: { isDirty },",
+      "    reset,",
+      "  } = useForm<FormSchema>({",
+      "    resolver: zodResolver(formSchema),",
+      "    mode: 'onChange',",
+      "    defaultValues: {},",
+      "  });",
+      "",
+      "  const onSubmit: SubmitHandler<FormSchema> = async (data) => {",
+      "    console.log(data)",
+      "  };"
+    ],
+    "description": "RHF UseForm and Submit Function"
+  },
+
+  "Example input and form wrapper for rhf": {
+    "prefix": "rhfreactform",
+    "body": [
+      "            <form onSubmit={handleSubmit(onSubmit)}>",
+      "              <RHFTextField name=\"name\" label=\"Name\" control={control} />",
+      "            </form>"
+    ],
+    "description": "Example input and form wrapper for rhf"
+  },
+
+  // React Snippets
+  "use state hook": {
+    "prefix": "rusestatehook",
+    "body": ["const [${1}, set${1/(.*)/${1:/capitalize}/}] = useState($2);"],
+    "description": "Declare a new state Variable using the State Hook. Hit Tab to apply CamelCase to function"
+  },
+
+  // Axios Snippets
+  "example calcey api axios call": {
+    "prefix": "axioscalltocalcey",
+    "body": [
+      "try {",
+      "      existingUser = await axios.post(",
+      "        `${process.env.NEXT_PUBLIC_CALCEY_API_BASE_URL}/players/login`,",
+      "        {",
+      "          email: data.email,",
+      "          password: data.password,",
+      "          fcmToken: 'AiSCOUTControlCentre',",
+      "        }",
+      "      );",
+      "    } catch (err: unknown) {",
+      "      if (axios.isAxiosError(err)) {",
+      "        if (err.response && err.response.data) {",
+      "          const result = z",
+      "            .object({ codes: z.array(z.string()), message: z.string() })",
+      "            .safeParse(err.response.data);",
+      "          if (result.success) {",
+      "            if (result.data.codes.includes('InvalidEmailOrPassword')) {",
+      "              setLoginError('Wrong email or password. Try again!');",
+      "            }",
+      "          } else {",
+      "            setLoginError(",
+      "              `Something went wrong and we didn't get a valid response telling us what. Try again!`",
+      "            );",
+      "          }",
+      "        } else {",
+      "          // It's not an axios error so something went really wrong",
+      "          setLoginError(",
+      "            'Something went wrong, we got a generic error. Try again!'",
+      "          );",
+      "        }",
+      "      }",
+      "    }"
+    ],
+    "description": "example calcey api axios call"
+  }
+}
