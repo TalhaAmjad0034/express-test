@@ -12,7 +12,7 @@ export const index: React.FunctionComponent = () => {
       </Typography>
 
       <Box>
-        <Typography 
+        <Typography
           sx={{
             marginLeft: "30px",
           }}
@@ -52,7 +52,7 @@ export const index: React.FunctionComponent = () => {
             </Box>
             {/* Submit */}
             <Box sx={{ display: "flex", gap: ".5rem", cursor: "pointer" }}>
-              <input type="submit" id="submit" name="Create User" />
+              <button type="submit">Create User</button>
             </Box>
           </Box>
         </form>
@@ -78,6 +78,39 @@ export const index: React.FunctionComponent = () => {
           </Typography>
           <Button variant="contained">Get All the users</Button>
         </Box>
+      </Box>
+      <Box
+        sx={{
+          "& table tbody": {
+            borderCollapse: "collapse",
+            width: "100%",
+          },
+          "& table tbody tr": {
+            "& td, &th": {
+              border: "1px solid #dddddd",
+              textAlign: "left",
+              padding: "8px",
+            },
+          },
+          "& table tbody tr:nth-child(even)": {
+            backgroundColor: "#dddddd",
+          },
+        }}
+      >
+        <table>
+          <tbody>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+            </tr>
+            <tr>
+              <td>Tupac</td>
+              <td>Shakur</td>
+              <td>tupacshakur@google.com</td>
+            </tr>
+          </tbody>
+        </table>
       </Box>
     </React.Fragment>
   );
